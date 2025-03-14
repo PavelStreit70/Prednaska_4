@@ -17,5 +17,30 @@ plot(data$flipper_length_mm, y = data$body_mass_g,
      main = "Palmer Penguins: body mass based on flipper length",
      colors <- rainbow(data$species), pch = c(15, 16, 17)[as.integer(data$island)]))
   
+#ggplot
 
+install.packages("ggplot2")
+library(ggplot2)
+
+view(data)
+str(data)
+head(data)
+
+#Stejný úkol jako v prvním zadání v BaseR
+
+ggplot(data, aes(x = body_mass_g, y = flipper_length_mm, col = species, shape = island)) + 
+                 geom_point() +
+                 labs(title ="Flipper length based on body mass")
+
+
+#To stejné, akorát pokus o zarovnání textu, bez úspěchu
+
+ggplot(data, aes(x = body_mass_g, y = flipper_length_mm,
+                                  col = species,
+                                  shape = island)) + 
+                                  geom_point() +
+                                  ggtitle("Flipper length based on body mass")+
+                                  theme("Flipper length based on body mass" = element_text(hjust = 0.5))
+              
+                
 
