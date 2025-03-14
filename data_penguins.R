@@ -39,8 +39,10 @@ ggplot(data, aes(x = body_mass_g, y = flipper_length_mm,
                                   col = species,
                                   shape = island)) + 
                                   geom_point() +
-                                  ggtitle("Flipper length based on body mass")+
-                                  theme("Flipper length based on body mass" = element_text(hjust = 0.5))
+                                  labs(title = "Flipper length based on body mass") +
+                                  theme(plot.title = element_text(hjust = 0.5, size = 12, face = "bold"))
+
+
               
                 
 
